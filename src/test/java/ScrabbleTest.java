@@ -19,6 +19,19 @@ public class ScrabbleTest {
     assertEquals(expected, testScrabble.runScrabble("d"));
   }
 
+  @Test
+  public void runScrabble_returnScoreForWord_ArrayList() {
+    Scrabble testScrabble = new Scrabble();
+    Integer expected = 2;
+    assertEquals(expected, testScrabble.runScrabble("aa"));
+  }
+
+  @Test
+  public void runScrabble_returnScoreForLongerWord_ArrayList() {
+    Scrabble testScrabble = new Scrabble();
+    Integer expected = 7;
+    assertEquals(expected, testScrabble.runScrabble("abc"));
+  }
 }
 
 // @Test

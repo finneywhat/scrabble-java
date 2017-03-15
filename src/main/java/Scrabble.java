@@ -20,18 +20,31 @@ public class Scrabble {
     String[] arrayValue10 = {"q", "z"};
     List tenValueLetter = Arrays.asList(arrayValue10);
 
-    Integer number = 0;
-    if (oneValueLetter.contains(stringUserInput)) {
-      number += 1;
-    } else if (twoValueLetter.contains(stringUserInput)) {
-      number += 2;
-    }
-    return number;
+    String[] userInput = stringUserInput.split("");
+    List userWordArray = Arrays.asList(userInput);
+
+    
+    Integer score = 0;
+    for (int i = 0; i < userWordArray.size(); i++)
+      if (oneValueLetter.contains(userWordArray.get(i))) {
+        score += 1;
+      } else if (twoValueLetter.contains(userWordArray.get(i))) {
+        score += 2;
+      }else if (threeValueLetter.contains(userWordArray.get(i))) {
+        score += 3;
+      }else if (fourValueLetter.contains(userWordArray.get(i))) {
+        score += 4;
+      }else if (fiveValueLetter.contains(userWordArray.get(i))) {
+        score += 5;
+      }else if (eightValueLetter.contains(userWordArray.get(i))) {
+        score += 8;
+      }else{
+        score += 10;
+      }
+      return score;
   }
 }
 
-
-    // Integer expected = 0;
     // String[] arrayUserInput = stringUserInput.split(" ");
     // for (int i = 0; i < arrayUserInput.length; i++) {
     //   if (arrayUserInput[i].equals(arrayValue1)) {
