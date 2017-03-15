@@ -20,10 +20,9 @@ public class Scrabble {
     String[] arrayValue10 = {"q", "z"};
     List tenValueLetter = Arrays.asList(arrayValue10);
 
-    String[] userInput = stringUserInput.split("");
+    String[] userInput = stringUserInput.toLowerCase().split("");
     List userWordArray = Arrays.asList(userInput);
 
-    
     Integer score = 0;
     for (int i = 0; i < userWordArray.size(); i++)
       if (oneValueLetter.contains(userWordArray.get(i))) {
