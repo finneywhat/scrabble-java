@@ -5,37 +5,29 @@ import java.util.Arrays;
 public class Scrabble {
 
   public Integer runScrabble(String stringUserInput){
-    String[] arrayValue1 = {"a", "e", "i", "o", "u", "l", "n", "r", "s", "t"};
-    List oneValueLetter = Arrays.asList(arrayValue1);
-    String[] arrayValue2 = {"d", "g"};
-    List twoValueLetter = Arrays.asList(arrayValue2);
-    String[] arrayValue3 = {"b", "c", "m", "p"};
-    List threeValueLetter = Arrays.asList(arrayValue3);
-    String[] arrayValue4 = {"f", "h", "v", "y"};
-    List fourValueLetter = Arrays.asList(arrayValue4);
-    String[] arrayValue5 = {"k"};
-    List fiveValueLetter = Arrays.asList(arrayValue5);
-    String[] arrayValue8 = {"j", "x"};
-    List eightValueLetter = Arrays.asList(arrayValue8);
-    String[] arrayValue10 = {"q", "z"};
-    List tenValueLetter = Arrays.asList(arrayValue10);
+    List<String> arrayValue1 = Arrays.asList("a", "e", "i", "o", "u", "l", "n", "r", "s", "t");
+    List<String> arrayValue2 = Arrays.asList("d", "g");
+    List<String> arrayValue3 = Arrays.asList("b", "c", "m", "p");
+    List<String> arrayValue4 = Arrays.asList("f", "h", "v", "y");
+    List<String> arrayValue5 = Arrays.asList("k");
+    List<String> arrayValue8 = Arrays.asList("j", "x");
+    List<String> arrayValue10 = Arrays.asList("q", "z");
 
-    String[] userInput = stringUserInput.toLowerCase().split("");
-    List userWordArray = Arrays.asList(userInput);
+    List<String> userWordArray = Arrays.asList(stringUserInput.toLowerCase().split(""));
 
     Integer score = 0;
     for (int i = 0; i < userWordArray.size(); i++)
-      if (oneValueLetter.contains(userWordArray.get(i))) {
+      if (arrayValue1.contains(userWordArray.get(i))) {
         score += 1;
-      } else if (twoValueLetter.contains(userWordArray.get(i))) {
+      } else if (arrayValue2.contains(userWordArray.get(i))) {
         score += 2;
-      }else if (threeValueLetter.contains(userWordArray.get(i))) {
+      }else if (arrayValue3.contains(userWordArray.get(i))) {
         score += 3;
-      }else if (fourValueLetter.contains(userWordArray.get(i))) {
+      }else if (arrayValue4.contains(userWordArray.get(i))) {
         score += 4;
-      }else if (fiveValueLetter.contains(userWordArray.get(i))) {
+      }else if (arrayValue5.contains(userWordArray.get(i))) {
         score += 5;
-      }else if (eightValueLetter.contains(userWordArray.get(i))) {
+      }else if (arrayValue8.contains(userWordArray.get(i))) {
         score += 8;
       }else{
         score += 10;
@@ -43,27 +35,3 @@ public class Scrabble {
       return score;
   }
 }
-
-    // String[] arrayUserInput = stringUserInput.split(" ");
-    // for (int i = 0; i < arrayUserInput.length; i++) {
-    //   if (arrayUserInput[i].equals(arrayValue1)) {
-    //     expected += 1
-    //   }
-    // }
-
-      // return expected;
-//   }
-// }
-
-// take user input (e.g. word), split "word" into
-
-// stringUserInput.split(' ')
-
-// char[] charArray = stringUserInput.toCharArray();
-// Character[] charObjectArray = ArrayUtils.toObject(charArray);
-//
-// for (int i = 0 ; i < stringUserInput.length(); i++){
-//   if (arrayValue1.contains(stringUserInput.charAt(i))){
-//     expected += 1;
-//
-//     for (String element : arrayUserInput)
